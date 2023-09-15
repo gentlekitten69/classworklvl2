@@ -1,0 +1,38 @@
+/*
+You're creating a discount calculator for a store. 
+Given an array of item prices, calculate and print the discounted price for each item. 
+Apply a 10% discount to items priced at or above $50 and a 5% discount to all other items.
+
+Print out a message indicating the original price and the new price of the item.
+
+Example input: [70, 25, 50, 10]
+
+Example output:
+Original price: $70, Discount price: $63
+Original price: $25, Discount price: $23.75
+Original price: $50, Discount price: $45
+Original price: $10, Discount price: $9.50
+ */
+
+const itemPrices = [25, 60, 30, 75, 15];
+
+//add your code below this line, include comments describing your code
+for (const price of itemPrices) {
+    let discountPercentage;
+    let discountPrice;
+  
+    //if the price is greater than 50 it will receive a 10% discount
+    //if the price is less then 50 it will receive a 5% discount
+    if (price >= 50) {
+      discount = 10;
+    } else {
+      discount = 5;
+    }
+  
+    //discount the price by multiplying by .10 but it had a different outcome.
+    //diiving by a 100 has a different outcome
+    discountPrice = price - (discount / 100);
+  
+    //the .toFixed() lets the outcome go to two decimal places.
+    console.log(`Original price: $${price}, Discount price: $${discountPrice.toFixed(2)}`);
+  }
